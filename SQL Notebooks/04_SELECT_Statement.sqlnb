@@ -4,7 +4,7 @@ cells:
       SELECT
       name
       FROM
-      custcmers;
+      customers;
     languageId: oracle-sql
   - kind: 2
     value: |
@@ -31,7 +31,7 @@ cells:
       SELECT
       UPPER( 'This is a string')
       From
-      what_table;
+      dual;
     languageId: oracle-sql
   - kind: 2
     value: SELECT * FROM dual;
@@ -46,7 +46,7 @@ cells:
   - kind: 2
     value: |
       SELECT
-      (10 + s)/2
+      (10+5)/2
       FROM
       dual;
     languageId: oracle-sql
@@ -55,14 +55,12 @@ cells:
       SELECT
       column_1,
       column_2,
-      column_3,
-      ...
+      column_3
       FROM
-      table_nane
+      table_name
       ORDER BY
-      column_1 [ASC I DESCJ [NULLS FIRST I NULLS LAST],
-      column_1 [ASC I DESC] [NULLS FIRST I NULLS LAST],
-      ...
+      column_1 ASC NULLS FIRST,
+      column_3 DESC NULLS LAST;
     languageId: oracle-sql
   - kind: 2
     value: |
@@ -85,10 +83,19 @@ cells:
       name ASC;
     languageId: oracle-sql
   - kind: 2
-    value: ORDER BY name ASC
+    value: |-
+      SELECT name
+      FROM Customers
+
+      ORDER BY 
+      name ASC
     languageId: oracle-sql
   - kind: 2
-    value: ORDER BY name
+    value: |-
+      SELECT name
+      FROM Customers
+
+      ORDER BY name
     languageId: oracle-sql
   - kind: 2
     value: |
@@ -116,7 +123,7 @@ cells:
     value: |
       SELECT
          name,
-         credi_limit
+         credit_limit
       FROM
          customers
       ORDER BY
@@ -138,7 +145,7 @@ cells:
   - kind: 2
     value: |
       SELECT
-          cenmtry_id,
+          country_id,
       city,
       state
       FROM
@@ -153,7 +160,7 @@ cells:
          city,
          state
       FROM
-         locatims
+         locations
       ORDER BY
          state
       ASC NULLS LAST;
@@ -166,7 +173,7 @@ cells:
       FROM
            customers
       ORDER BY
-      UPPER(name),
+      UPPER(name)
     languageId: oracle-sql
   - kind: 2
     value: |
@@ -181,9 +188,9 @@ cells:
           order_date DESC;
     languageId: oracle-sql
   - kind: 2
-    value: |
-      SELECT DISTINCT colunn_l
-      FROM table;
+    value: |-
+      SELECT DISTINCT column_l;
+      FROM customers;
     languageId: oracle-sql
   - kind: 2
     value: |
@@ -193,6 +200,8 @@ cells:
       column_3
       FROM
       table_name;
+      ORDER BY
+          DISTINCT;
     languageId: oracle-sql
   - kind: 2
     value: |

@@ -1,6 +1,8 @@
 cells:
   - kind: 2
-    value: expression_1 AND expression_2
+    value: |-
+      SELECT
+      expression_1 AND expression_2
     languageId: oracle-sql
   - kind: 2
     value: |
@@ -21,13 +23,15 @@ cells:
     value: status = ' Pending '
     languageId: oracle-sql
   - kind: 2
-    value: customer_ld = 2
+    value: |-
+      
+      customer_ld = 2
     languageId: oracle-sql
   - kind: 2
     value: |
       SELECT
            order_id,
-           customer_id.
+           customer_id,
            status,
            order_date
       FROM
@@ -50,13 +54,16 @@ cells:
          orders
       WHERE
          status = 'Pending'
-         OR status 'Canceled '
+         OR status = 'Canceled '
       ORDER BY
       order_date DESC;
     languageId: oracle-sql
   - kind: 2
+    value: ""
+    languageId: oracle-sql
+  - kind: 2
     value: |
-      status 'pending'
+      status = 'pending' OR
       status = 'Canceled'
     languageId: oracle-sql
   - kind: 2
@@ -85,8 +92,8 @@ cells:
       FROM
          orders
       WHERE
-      (status = 'Canceled'
-      status 'Pending')
+      (status = 'Canceled' OR
+      status = 'Pending')
       AND customer_id = 44
       ORDER BY
           order_date;
@@ -101,7 +108,7 @@ cells:
            customer_id
       status,
            salesman_id
-      Form
+      From
          orders
       WHERE
          salesman_id IN (54, 55, 56)
@@ -112,7 +119,7 @@ cells:
     value: |
       SELECT
            order_id,
-           custær_id,
+           customer_id,
            status,
            salesman_id
       FROM
@@ -139,8 +146,8 @@ cells:
   - kind: 2
     value: |
       SELECT
-          enployee_id ,
-          first_name
+          employee_id ,
+          first_name,
           last_name
       FROM
          employees
@@ -151,7 +158,7 @@ cells:
       FROM
          orders
       WHERE
-         status = 'Canceled');
+         status = 'Canceled')
       ORDER BY
          first_Name;
     languageId: oracle-sql
@@ -202,9 +209,9 @@ cells:
       FROM
          orders
       WHERE
-         salesman id = 60
-         OR salesman id = 61
-         OR salesman id = 62
+         salesman_id = 60
+         OR salesman_id = 61
+         OR salesman_id = 62
       ORDER BY
       customer_id;
     languageId: oracle-sql
@@ -231,7 +238,7 @@ cells:
       FROM
           products
       WHERE
-         standard_cost BETÆEN 500 AND 600
+         standard_cost BETWEEN 500 AND 600
       ORDER BY
          standard_cost ;
     languageId: oracle-sql
@@ -268,12 +275,12 @@ cells:
     value: |
       SELECT
           first_name,
-          last_names
+          last_name,
           phone
       FROM
          contacts
       WHERE
-         last name LIKE 'St%'
+         last_name LIKE 'St%'
       ORDER BY
          last_name;
     languageId: oracle-sql
@@ -291,7 +298,7 @@ cells:
           last_name;
     languageId: oracle-sql
   - kind: 2
-    value: '%er'
+    value: "%er"
     languageId: oracle-sql
   - kind: 2
     value: |
@@ -350,7 +357,7 @@ cells:
          first_name LIKE 'Je_%';
     languageId: oracle-sql
   - kind: 2
-    value: LIKE '%25!%% 'ESCAPE '!'
+    value: LIKE '%25!%%' ESCAPE '!'
     languageId: oracle-sql
   - kind: 2
     value: |
@@ -378,7 +385,7 @@ cells:
       FROM
            discounts
       WHERE
-           discount_message LIKE '%25!%%' ESCAPE '!';
+           discounts_message LIKE '%25!%%' ESCAPE '!';
     languageId: oracle-sql
   - kind: 2
     value: |
@@ -387,7 +394,9 @@ cells:
       ORDER BY order_date DESC;
     languageId: oracle-sql
   - kind: 2
-    value: expression | column IS NOT NULL
+    value: |-
+      expression |
+      column IS NOT NULL
     languageId: oracle-sql
   - kind: 2
     value: |
